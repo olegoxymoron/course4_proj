@@ -65,6 +65,9 @@ class Dev(Configuration):
         #'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ]
 
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    ADMINS = [("Codio", "codio@example.com")]
+
     CELERY_RESULT_BACKEND = "django-db"
     CELERY_BROKER_URL = "redis://localhost:6379/0"
 
