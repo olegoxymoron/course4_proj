@@ -50,6 +50,7 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'django_celery_results',
         'movies',
         'gh'
     ]
@@ -63,6 +64,9 @@ class Dev(Configuration):
         'django.contrib.messages.middleware.MessageMiddleware',
         #'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ]
+
+    CELERY_RESULT_BACKEND = "django-db"
+    CELERY_BROKER_URL = "redis://localhost:6379/0"
 
     ROOT_URLCONF = 'course4_proj.urls'
 
